@@ -169,3 +169,67 @@ let articles = data.map((dta) => {
     let newArticle = artclCntnr(dta)
     return newArticle
 })
+
+//stretch
+/*
+const sData = [{
+        headline: "New News, All the way!",
+        date: "10/30/2019",
+        author: "Joseph Graham",
+        img: "../assets/newsimage.jpg",
+        content: "My news is cut, dry, and to the point! No news is good news!"
+    },
+    {
+        headline: "New is the new old",
+        date: "10/30/2019",
+        author: "Joseph Graham",
+        img: "../assets/newsimage.jpg",
+        content: "This one, That one, All of them!"
+    },
+    {
+        headline: "Old is the old old!",
+        date: "10/30/2019",
+        author: "Joseph Graham",
+        img: "../assets/newsimage.jpg",
+        content: "just different. Pretty easy, right?"
+    }
+]
+
+data.forEach(sData => {
+    apndDiv.appendChild(newNews(sData.headline, sData.date, sData.author, sData.img, sData.content))
+})
+
+function newNews(headline, date, author, img, content) {
+    const newstory = document.createElement('div')
+    const hdln = document.createElement('h2')
+    const dat = document.createElement('p')
+    const athr = document.createElement('h3')
+    const npic = document.createElement('img')
+    const cntnt = document.createElement('p')
+
+    newstory.appendChild(hdln);
+    newstory.appendChild(dat);
+    newstory.appendChild(athr);
+    newstory.appendChild(npic);
+    newstory.appendChild(cntnt);
+
+
+    newstory.classList.add("story");
+    dat.classList.add("newsdate");
+    cntnt.classList.add("FakeNews")
+
+    hdln.textContent = headline;
+    dat.textContent = date;
+    athr.textContent = author;
+    npic.textContent = img;
+    cntnt.textContent = content;
+
+    return newstory
+
+}
+
+let stories = sData.map((sdta) => {
+    let freshNews = newNews(sdta)
+    return freshNews
+})
+*/
