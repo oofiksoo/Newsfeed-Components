@@ -111,36 +111,54 @@ const data = [{
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-const apnd = document.querySelector('.articles')
-data.map(dta => {
-    apnd.appendChild(crtcntnt(dta))
+const apndDiv = document.querySelector('.articles')
+const expandBtn = document.querySelector('.expandButton')
+
+data.forEach(data => {
+    apndDiv.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
 
-function crtcntnt(el) {
-    const artcl = document.createElement('div');
-    artcl.classList.add('article');
-    const attl = document.createElement('h2');
-    attl.textContent = title;
-    const adte = document.createElement('p');
-    adte.classList.add('date')
-    artcl.appendChild(adte);
-    adte.textContent = date;
-    const acntnt1 = document.createElement('p');
-    artcl.appendChild(acntnt1);
-    acntnt1.textContent = firstParagraph;
-    const acntnt2 = document.createElement('p');
-    artcl.appendChild(acntnt2);
-    acntnt2.textContent = secondParagraph;
-    const acntnt3 = document.createElement('p');
-    artcl.appendChild(acntnt3);
-    acntnt3.textContent = thirdParagraph;
-    const btn = document.createElement('span');
-    btn.classList.add('expandButton');
-    artcl.appendChild(btn)
-    btn.textContent = '+';
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+    const artcl = document.createElement('div')
+    const ttl = document.createElement('h2')
+    const dte = document.createElement('p')
+    const cntnt1 = document.createElement('p')
+    const cntnt2 = document.createElement('p')
+    const cntnt3 = document.createElement('p')
+    const btn = document.createElement('span')
+
+    artcl.appendChild(ttl);
+    artcl.appendChild(dte);
+    artcl.appendChild(cntnt1);
+    artcl.appendChild(cntnt2);
+    artcl.appendChild(cntnt3);
+    artcl.appendChild(btn);
+
+    artcl.classList.add("article");
+    dte.classList.add("date");
+    btn.classList.add("expandButton");
+
+    ttl.textContent = title;
+    dte.textContent = date;
+    cntnt1.textContent = firstParagraph;
+    cntnt2.textContent = secondParagraph;
+    cntnt3.textContent = thirdParagraph;
+    btn.textContent = 'expand';
 
     btn.addEventListener('click', () => {
-        return crtcntnt
+        artcl.classList.toggle('article-open');
     })
 
+    return artcl
+
 }
+
+//Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+let articles = data.map((btn) => {
+
+    let newArticle = createArticle(btn)
+
+    return newArticle
+
+})
