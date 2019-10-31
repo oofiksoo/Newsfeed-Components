@@ -156,9 +156,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 //Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
 let articles = data.map((btn) => {
-
     let newArticle = createArticle(btn)
-
     return newArticle
-
 })
