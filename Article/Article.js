@@ -90,7 +90,7 @@ const data = [{
         date: 'oct 30th, 2019',
         firstParagraph: `This is a bunch of content. Why waste space with repetitive words, when a few sentances gets the same point accross. `,
 
-        secondParagraph: `While dramtics are nice, it can sometimes overwelm and cause destraction from the important elements. Do i need a huge
+        secondParagraph: `While dramatics have their place, it can sometimes overwelm and cause destraction from the important elements. Do i need a huge
       block of text? nope, you get my point. `,
 
         thirdParagraph: ` This is pretty annoying actually - Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
@@ -127,10 +127,10 @@ const apndDiv = document.querySelector('.articles')
 const expandBtn = document.querySelector('.expandButton')
 
 data.forEach(data => {
-    apndDiv.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+    apndDiv.appendChild(artclCntnr(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
 
-function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+function artclCntnr(title, date, firstParagraph, secondParagraph, thirdParagraph) {
     const artcl = document.createElement('div')
     const ttl = document.createElement('h2')
     const dte = document.createElement('p')
@@ -165,9 +165,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 
 }
 
-//Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-let articles = data.map((btn) => {
-    let newArticle = createArticle(btn)
+let articles = data.map((dta) => {
+    let newArticle = artclCntnr(dta)
     return newArticle
 })
