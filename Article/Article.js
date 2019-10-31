@@ -138,27 +138,33 @@ function artclCntnr(title, date, firstParagraph, secondParagraph, thirdParagraph
     const cntnt2 = document.createElement('p')
     const cntnt3 = document.createElement('p')
     const btn = document.createElement('span')
-
+    const rbtn = document.createElement('span') //stretch
     artcl.appendChild(ttl);
     artcl.appendChild(dte);
     artcl.appendChild(cntnt1);
     artcl.appendChild(cntnt2);
     artcl.appendChild(cntnt3);
     artcl.appendChild(btn);
+    artcl.appendChild(rbtn); //stretch
 
     artcl.classList.add("article");
     dte.classList.add("date");
     btn.classList.add("expandButton");
-
+    rbtn.classList.add("removebtn") //stretch
     ttl.textContent = title;
     dte.textContent = date;
     cntnt1.textContent = firstParagraph;
     cntnt2.textContent = secondParagraph;
     cntnt3.textContent = thirdParagraph;
     btn.textContent = 'expand';
+    rbtn.textContent = 'remove'; //stretch
 
     btn.addEventListener('click', () => {
-        artcl.classList.toggle('article-open');
+            artcl.classList.toggle('article-open');
+        })
+        //stretch
+    rbtn.addEventListener('click', (e) => {
+        artcl.remove(e.target);
     })
 
     return artcl
