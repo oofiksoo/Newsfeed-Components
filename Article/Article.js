@@ -124,7 +124,7 @@ const data = [{
 
 */
 const apndDiv = document.querySelector('.articles')
-const expandBtn = document.querySelector('.expandButton')
+    //const expandBtn = document.querySelector('.expandButton')
 
 data.forEach(data => {
     apndDiv.appendChild(artclCntnr(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
