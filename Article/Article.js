@@ -112,29 +112,28 @@ const data = [{
 
 */
 const apnd = document.querySelector('.articles')
-data.map(data => {
-    apnd.appendChild(crtcntnt(data))
+data.map(dta => {
+    apnd.appendChild(crtcntnt(dta))
 })
 
-function crtcntnt(ttl, dte, cntnt1, cntnt2, cntnt3) {
+function crtcntnt(el) {
     const artcl = document.createElement('div');
     artcl.classList.add('article');
     const attl = document.createElement('h2');
-    artcl.appendChild(attl);
-    attl.textContent = data.title;
+    attl.textContent = title;
     const adte = document.createElement('p');
     adte.classList.add('date')
     artcl.appendChild(adte);
-    adte.textContent = data.date;
+    adte.textContent = date;
     const acntnt1 = document.createElement('p');
     artcl.appendChild(acntnt1);
-    acntnt1.textContent = data.firstParagraph;
+    acntnt1.textContent = firstParagraph;
     const acntnt2 = document.createElement('p');
     artcl.appendChild(acntnt2);
-    acntnt1.textContent = data.secondParagraph;
+    acntnt2.textContent = secondParagraph;
     const acntnt3 = document.createElement('p');
     artcl.appendChild(acntnt3);
-    acntnt1.textContent = data.thirdParagraph;
+    acntnt3.textContent = thirdParagraph;
     const btn = document.createElement('span');
     btn.classList.add('expandButton');
     artcl.appendChild(btn)
